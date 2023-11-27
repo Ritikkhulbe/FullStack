@@ -6,7 +6,28 @@ Try running it for
 3. Sum from 1-1000000000
 Hint - use Date class exposed in JS
 */
+function sum(num){
+    var a = 0;
+    for(let i = 1;i <= num;i++){
+        a += i;
+    }
+    return a;
+}
 
 function calculateTime(n) {
-    return 0.01;
+    let start = new Date();
+
+    sum(n);
+
+    let end = new Date();
+
+    return (end - start)/1000;
 }
+
+var test1 = calculateTime(100);
+var test2 = calculateTime(100000);
+var test3 = calculateTime(1000000000);
+
+console.log(`Time taken to execute Sum 1-100 is ${test1}s`)
+console.log(`Time taken to execute Sum 1-100000 is ${test2}s`)
+console.log(`Time taken to execute Sum 1-1000000000 is ${test3}s`)
